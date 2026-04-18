@@ -7,11 +7,11 @@ import { motion } from 'framer-motion';
 import { formatCostRange, formatCurrency } from '@/engines/costEngine';
 import { getScoreInterpretation, getComponentDescription } from '@/engines/scoringEngine';
 import { getRiskColor } from '@/engines/riskEngine';
-import { 
-  X, 
-  ExternalLink, 
-  CheckCircle2, 
-  XCircle, 
+import {
+  X,
+  ExternalLink,
+  CheckCircle2,
+  XCircle,
   AlertCircle,
   GraduationCap,
   Wallet,
@@ -27,18 +27,18 @@ interface CountryDetailPanelProps {
   onClose: () => void;
 }
 
-export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({ 
-  evaluation, 
-  onClose 
+export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({
+  evaluation,
+  onClose
 }) => {
-  const { 
-    country, 
-    feasibilityScore, 
-    eligibility, 
-    costEstimate, 
-    scholarshipMatches, 
+  const {
+    country,
+    feasibilityScore,
+    eligibility,
+    costEstimate,
+    scholarshipMatches,
     risks,
-    nextSteps 
+    nextSteps
   } = evaluation;
   const interpretation = getScoreInterpretation(feasibilityScore.overall);
 
@@ -91,9 +91,8 @@ export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({
                     initial={{ width: 0 }}
                     animate={{ width: `${value}%` }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className={`h-full rounded-full ${
-                      value >= 70 ? 'bg-success' : value >= 50 ? 'bg-warning' : 'bg-destructive'
-                    }`}
+                    className={`h-full rounded-full ${value >= 70 ? 'bg-success' : value >= 50 ? 'bg-warning' : 'bg-destructive'
+                      }`}
                   />
                 </div>
                 <p className="text-xs text-muted-foreground">
@@ -156,9 +155,9 @@ export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({
               <div className="flex items-center gap-2">
                 <Wallet className="w-5 h-5 text-primary" />
                 Cost Estimate
-                <StatusBadge 
-                  status={costEstimate.affordabilityStatus === 'affordable' ? 'high' : 
-                          costEstimate.affordabilityStatus === 'tight' ? 'medium' : 'low'} 
+                <StatusBadge
+                  status={costEstimate.affordabilityStatus === 'affordable' ? 'high' :
+                    costEstimate.affordabilityStatus === 'tight' ? 'medium' : 'low'}
                   className="ml-2"
                 >
                   {costEstimate.affordabilityStatus}
@@ -267,9 +266,9 @@ export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({
               <AccordionContent className="space-y-3 pt-2">
                 {risks.map((risk, i) => (
                   <div key={i} className="p-3 rounded-lg bg-muted/50 border-l-4" style={{
-                    borderLeftColor: risk.severity === 'high' ? 'hsl(var(--destructive))' : 
-                                     risk.severity === 'medium' ? 'hsl(var(--warning))' : 
-                                     'hsl(var(--muted-foreground))'
+                    borderLeftColor: risk.severity === 'high' ? 'hsl(var(--destructive))' :
+                      risk.severity === 'medium' ? 'hsl(var(--warning))' :
+                        'hsl(var(--muted-foreground))'
                   }}>
                     <div className="flex items-center gap-2 mb-1">
                       <span className={`text-xs font-medium uppercase ${getRiskColor(risk.severity)}`}>
@@ -349,11 +348,7 @@ export const CountryDetailPanel: React.FC<CountryDetailPanelProps> = ({
               </a>
             </Button>
           )}
-          <Button variant="outline" size="sm" asChild>
-            <a href={country.officialLinks.visaInfo} target="_blank" rel="noopener noreferrer">
-              Visa Info <ExternalLink className="w-3 h-3 ml-1" />
-            </a>
-          </Button>
+
         </div>
       </div>
     </motion.div>
