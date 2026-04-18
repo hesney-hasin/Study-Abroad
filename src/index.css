@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 16% 96%;
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    --primary: 220 65% 46%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 65% 56%;
+
+    --secondary: 220 14% 46%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 64%;
+    --muted-foreground: 220 14% 46%;
+
+    --accent: 220 16% 93%;
+    --accent-foreground: 220 30% 12%;
+
+    --destructive: 0 68% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 50% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 36 80% 50%;
+    --warning-foreground: 36 80% 12%;
+
+    --info: 210 80% 52%;
+    --info-foreground: 0 0% 100%;
+
+    --eligible: 160 50% 38%;
+    --borderline: 36 80% 50%;
+    --not-eligible: 0 68% 52%;
+
+    --feasibility-high: 160 50% 38%;
+    --feasibility-medium: 36 80% 50%;
+    --feasibility-low: 0 68% 52%;
+
+    --border: 220 16% 88%;
+    --input: 220 16% 88%;
+    --ring: 220 65% 46%;
+
+    --radius: 0.5rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 65% 46%) 0%, hsl(220 65% 56%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 16% 98%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(36 80% 50%) 0%, hsl(25 85% 48%) 100%);
+
+    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.04);
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.06);
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.08), 0 1px 2px -1px hsl(0 0% 0% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.08), 0 2px 4px -2px hsl(0 0% 0% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -4px hsl(0 0% 0% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.08), 0 8px 10px -6px hsl(0 0% 0% / 0.04);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 20px hsl(220 65% 46% / 0.15);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 12%;
+    --sidebar-primary: 220 65% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 16% 93%;
+    --sidebar-accent-foreground: 220 30% 12%;
+    --sidebar-border: 220 16% 88%;
+    --sidebar-ring: 220 65% 46%;
+
+    --chart-1: 220 65% 46%;
+    --chart-2: 210 80% 52%;
+    --chart-3: 160 50% 38%;
+    --chart-4: 36 80% 50%;
+    --chart-5: 0 68% 52%;
+
+    --sidebar: 0 0% 100%;
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 222 30% 8%;
+    --foreground: 220 16% 93%;
+
+    --card: 222 25% 12%;
+    --card-foreground: 220 16% 93%;
+
+    --popover: 222 25% 14%;
+    --popover-foreground: 220 16% 93%;
+
+    --primary: 220 70% 60%;
+    --primary-foreground: 222 30% 8%;
+    --primary-glow: 220 70% 70%;
+
+    --secondary: 220 14% 64%;
+    --secondary-foreground: 222 30% 8%;
+
+    --muted: 222 14% 30%;
+    --muted-foreground: 220 14% 64%;
+
+    --accent: 222 20% 16%;
+    --accent-foreground: 220 16% 93%;
+
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 50% 45%;
+    --success-foreground: 222 30% 8%;
+
+    --border: 222 14% 20%;
+    --input: 222 14% 20%;
+    --ring: 220 70% 60%;
+
+    --sidebar-background: 222 25% 10%;
+    --sidebar-foreground: 220 16% 93%;
+    --sidebar-primary: 220 70% 60%;
+    --sidebar-primary-foreground: 222 30% 8%;
+    --sidebar-accent: 222 20% 16%;
+    --sidebar-accent-foreground: 220 16% 93%;
+    --sidebar-border: 222 14% 20%;
+    --sidebar-ring: 220 70% 60%;
+
+    --chart-1: 220 70% 60%;
+    --chart-2: 210 80% 62%;
+    --chart-3: 160 50% 45%;
+    --chart-4: 36 80% 55%;
+    --chart-5: 0 72% 60%;
+
+    --sidebar: 222 25% 12%;
+
+    --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.1);
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.15);
+    --shadow-sm: 0 1px 3px 0 hsl(0 0% 0% / 0.2), 0 1px 2px -1px hsl(0 0% 0% / 0.15);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.2), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.2), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.2), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .card-elevated {
+    @apply bg-card rounded-lg border border-border shadow-sm transition-all duration-200;
+  }
+
+  .card-elevated:hover {
+    @apply shadow-md;
+  }
+
+  .score-ring {
+    @apply relative inline-flex items-center justify-center;
+  }
+
+  .score-ring-bg {
+    stroke: hsl(var(--muted));
+    fill: none;
+  }
+
+  .score-ring-progress {
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+  }
+
+  .feasibility-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-sm font-medium;
+  }
+
+  .feasibility-badge.high {
+    @apply bg-success/10 text-success;
+  }
+
+  .feasibility-badge.medium {
+    @apply bg-warning/10 text-warning-foreground;
+  }
+
+  .feasibility-badge.low {
+    @apply bg-destructive/10 text-destructive;
+  }
+
+  .step-indicator {
+    @apply flex items-center gap-2;
+  }
+
+  .step-dot {
+    @apply w-2.5 h-2.5 rounded-full transition-all duration-300;
+  }
+
+  .step-dot.active {
+    @apply bg-primary scale-110;
+  }
+
+  .step-dot.completed {
+    @apply bg-success;
+  }
+
+  .step-dot.pending {
+    @apply bg-border;
+  }
+
+  .country-flag {
+    @apply w-8 h-6 rounded object-cover shadow-sm;
+  }
+
+  .input-group {
+    @apply space-y-2;
+  }
+
+  .input-group label {
+    @apply text-sm font-medium text-foreground;
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-sm border border-border/60 rounded-lg;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    @apply bg-gradient-hero bg-clip-text text-transparent;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+}

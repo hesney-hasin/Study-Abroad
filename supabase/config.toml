@@ -1,0 +1,7 @@
+project_id = "qmrderdlpqoedhotsxpr"
+
+[functions.professor-search]
+verify_jwt = false
+
+[functions.evaluate-countries]
+verify_jwt = false
