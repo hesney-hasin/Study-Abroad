@@ -1,6 +1,6 @@
 # Study Abroad Platform
 
-A comprehensive web application designed to help international students plan their study abroad journey. Discover universities, find advisors, understand visa requirements, and analyze research papers—all in one place.
+A comprehensive web application designed to help Bangladeshi students plan their study abroad journey. Discover universities, find advisors, understand visa requirements, and analyze research papers—all in one place.
 
 ## Features
 
